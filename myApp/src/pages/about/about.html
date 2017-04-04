@@ -8,13 +8,26 @@
 
 <ion-content>
   <ion-list>
-    <ion-item *ngFor="let item of items">
-      <ion-label>{{item}}</ion-label>
-      <ion-checkbox color="secondary" checked="false"></ion-checkbox>
-    </ion-item>
+    <form (ngSubmit)="addTask()">
+      <ion-item>
+        <ion-input type="text" placeholder="Add Task" [(ngModel)]="task.name" name="name"></ion-input>
+      </ion-item>
+    </form>
 
+    <ion-item-sliding *ngFor="let item of items">
+      <ion-item>
+        <ion-label>{{item}}</ion-label>
+        <ion-checkbox color="secondary" checked="false"></ion-checkbox>
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button color="primary">
+          Edit
+        </button>
+        <button ion-button color="danger">
+          <!--<ion-icon name="ios-trash-outline"></ion-icon>-->
+          Remove
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
   </ion-list>
-  <ion-fab>
-      <button ion-fab mini color="secondary" (click)="test()"><ion-icon name="add"></ion-icon></button>
-  </ion-fab>
 </ion-content>

@@ -11,15 +11,18 @@ import { NavController } from 'ionic-angular';
 export class AboutPage {
 
   items: any[];
+  task = {};
 
   constructor(public navCtrl: NavController) {
   	this.items = ["Take Out Kitchen Trash","Swiffer Living Room","Clean Kitchen"];
-
   };
 
-  test()
-  {
-  	this.navCtrl.push(AddChorePage);
+  addTask() {
+    if (this.task['name'] == '') {
+      return
+    }
+    this.items.push(this.task['name'])
+    this.task['name'] = ''
   }
 
 }
