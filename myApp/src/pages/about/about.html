@@ -8,21 +8,13 @@
 
 <ion-content>
   <ion-list>
-    <ion-item>
-      <ion-label>Clean Kitchen</ion-label>
-      <ion-checkbox color="secondary" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Take Out Kitchen Trash</ion-label>
-      <ion-checkbox color="secondary" checked="false"></ion-checkbox>
-    </ion-item>
-    <ion-item>
-      <ion-label>Swiffer Living Room</ion-label>
+    <ion-item *ngFor="let item of items">
+      <ion-label>{{item}}</ion-label>
       <ion-checkbox color="secondary" checked="false"></ion-checkbox>
     </ion-item>
 
   </ion-list>
   <ion-fab>
-      <button ion-fab mini color="secondary"><ion-icon name="add"></ion-icon></button>
+      <button ion-fab mini color="secondary" (click)="test()"><ion-icon name="add"></ion-icon></button>
   </ion-fab>
 </ion-content>
