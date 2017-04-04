@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
+    <ion-title >
       Chores
     </ion-title>
   </ion-navbar>
@@ -10,21 +10,17 @@
   <ion-list>
     <form (ngSubmit)="addTask()">
       <ion-item>
-        <ion-input type="text" placeholder="Add Task" [(ngModel)]="task.name" name="name"></ion-input>
+        <ion-input type="text" placeholder="Add Task" [(ngModel)]="newTask.newName" name="newName"></ion-input>
       </ion-item>
     </form>
 
     <ion-item-sliding *ngFor="let item of items">
       <ion-item>
-        <ion-label>{{item}}</ion-label>
+        <ion-label >{{item}}</ion-label>
         <ion-checkbox color="secondary" checked="false"></ion-checkbox>
       </ion-item>
       <ion-item-options side="right">
-        <button ion-button color="primary">
-          Edit
-        </button>
-        <button ion-button color="danger">
-          <!--<ion-icon name="ios-trash-outline"></ion-icon>-->
+        <button (click)="removeTask(item)" ion-button color="danger">
           Remove
         </button>
       </ion-item-options>
