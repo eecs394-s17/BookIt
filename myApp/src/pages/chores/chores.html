@@ -11,7 +11,9 @@
     <form (ngSubmit)="addTask()">
       <ion-item>
         <ion-input type="text" placeholder="Add Task" [(ngModel)]="newTask.newName" name="newName"></ion-input>
-        <button ion-button type="submit"></button>
+      </ion-item>
+      <ion-item>
+          <button ion-button type="submit"></button>
       </ion-item>
     </form>
 
