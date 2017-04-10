@@ -1,0 +1,17 @@
+{
+  "name": "RoomMeAPI",
+  "version": "0.0.1",
+  "description": "",
+  "main": " ",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OrangeTeam",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "mongoose": "^4.9.4"
+  },
+  "devDependencies": {}
+}
