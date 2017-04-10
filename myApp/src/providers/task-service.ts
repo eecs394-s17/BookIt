@@ -15,6 +15,8 @@ export class TaskService {
     console.log('Hello TaskService Provider');
   }
 
+  // Function to grab data from the api
+  // TODO: Replace url with valid API url
   grabTasks() {
         var url = 'https://randomuser.me/api/';
         var response = this.http.get(url).map(res => res.json());
