@@ -2,9 +2,12 @@ import { Component } from '@angular/core';
 
 import { NavController } from 'ionic-angular';
 
+import {TaskService} from '../../providers/task-service';
+
 @Component({
   selector: 'page-chore',
-  templateUrl: 'chores.html'
+  templateUrl: 'chores.html',
+  providers: [TaskService]
 })
 
 export class ChoresPage {
@@ -12,7 +15,17 @@ export class ChoresPage {
   items: any[];
   newTask = {};
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private taskService: TaskService) {
+      this.taskService.grabTasks().subscribe(
+          data => {
+              console.log(data);
+          },
+          err => {
+              console.log(err);
+          },
+          () => console.log('Task Grab complete')
+      );
+
   	this.items = [
         "Take Out Kitchen Trash",
         "Swiffer Living Room",
