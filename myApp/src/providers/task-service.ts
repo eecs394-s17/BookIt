@@ -18,7 +18,7 @@ export class TaskService {
   // Function to grab data from the api
   // TODO: Replace url with valid API url
   grabTasks() {
-        var url = 'https://randomuser.me/api/';
+        var url = 'http://104.236.94.74:8000/chores';
         var response = this.http.get(url).map(res => res.json());
         return response;
     }
