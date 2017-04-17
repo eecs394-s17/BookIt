@@ -7,6 +7,7 @@ import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { ChoresPage } from '../pages/chores/chores';
 import { ShoppingPage } from '../pages/shopping/shopping';
+import { AssignPage } from '../pages/assign/assign';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -17,7 +18,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     HomePage,
     ChoresPage,
-    ShoppingPage
+    ShoppingPage,
+    AssignPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     HomePage,
     ChoresPage,
-    ShoppingPage
+    ShoppingPage,
+    AssignPage
   ],
   providers: [
     StatusBar,

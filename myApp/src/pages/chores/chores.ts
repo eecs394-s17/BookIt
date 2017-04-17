@@ -4,6 +4,8 @@ import { NavController } from 'ionic-angular';
 
 import {TaskService} from '../../providers/task-service';
 
+import { AssignPage } from '../assign/assign';
+
 @Component({
   selector: 'page-chore',
   templateUrl: 'chores.html',
@@ -12,6 +14,7 @@ import {TaskService} from '../../providers/task-service';
 })
 
 export class ChoresPage {
+  assignPage = AssignPage
 
   items = [];
   newTask = {};

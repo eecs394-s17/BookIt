@@ -7,6 +7,7 @@ import { HomePage } from '../pages/home/home';
 import { ChoresPage } from '../pages/chores/chores';
 import { ShoppingPage } from '../pages/shopping/shopping';
 import { LoginPage } from '../pages/login/login';
+import { AssignPage } from '../pages/assign/assign';
 
 @Component({
   templateUrl: 'app.html'

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title >
+      Add A Task
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item>
+      <ion-label>Assign To</ion-label>
+      <ion-select [(ngModel)]="assign" multiple="true">
+        <ion-option value="sehmon">Sehmon Burnam</ion-option>
+        <ion-option value="spenser">Spenser Huang</ion-option>
+        <ion-option value="john">John Kelley</ion-option>
+        <ion-option value="lily">Lily Zhang</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="text" placeholder="Add Task" [(ngModel)]="newTask.newName" name="newName"></ion-input>
+    </ion-item>
+
+    <button ion-button full icon-left ngClick="addTask()" navPop>
+      <ion-icon name="add-circle"></ion-icon>
+      Add Task
+    </button>
+
+  </ion-list>
+</ion-content>

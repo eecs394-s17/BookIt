@@ -8,12 +8,17 @@ import { LoginPage } from '../login/login';
 })
 export class HomePage {
 
+  loggedIn = 0
+  
   constructor(public navCtrl: NavController) {
 
   }
 
   ngAfterViewInit() {
-    this.navCtrl.push(LoginPage);
+    if(this.loggedIn == 0) {
+        this.navCtrl.push(LoginPage);
+    }
+    this.loggedIn = 1
   }
 
 }
