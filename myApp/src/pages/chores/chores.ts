@@ -13,16 +13,15 @@ import {TaskService} from '../../providers/task-service';
 
 export class ChoresPage {
 
-  items: any[];
+  items = [];
   newTask = {};
 
   constructor(public navCtrl: NavController, private taskService: TaskService) {
-
       // Subscribe is called once the grabTasks() function receives its data
       this.taskService.grabTasks().subscribe(
           // If data is received successfully
           data => {
-              console.log(data);
+              this.items.push(data[0].name);
           },
           // If trying to grab the data results in an error
           err => {
@@ -31,12 +30,6 @@ export class ChoresPage {
           // Finally, In all cases console log "Task Grab Complete"
           () => console.log('Task Grab complete')
       );
-
-  	this.items = [
-        "Take Out Kitchen Trash",
-        "Swiffer Living Room",
-        "Clean Kitchen"
-    ];
   };
 
   addTask() {
