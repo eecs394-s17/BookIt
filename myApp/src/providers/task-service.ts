@@ -23,5 +23,11 @@ export class TaskService {
         return response;
     }
 
+  addChore(data) {
+    var url = 'http://104.236.94.74:8000/chores';
+    var response = this.http.post(url, data).map(res => res.json());
+    return response;
+  }
+
 
 }

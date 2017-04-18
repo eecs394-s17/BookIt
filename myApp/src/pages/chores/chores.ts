@@ -21,7 +21,11 @@ export class ChoresPage {
       this.taskService.grabTasks().subscribe(
           // If data is received successfully
           data => {
-              this.items.push(data[0].name);
+              console.log("data",data);
+
+              for(var i=0;i<data.length;i++) {
+                this.items.push(data[i].name);
+              }
           },
           // If trying to grab the data results in an error
           err => {
@@ -36,6 +40,25 @@ export class ChoresPage {
     if (this.newTask['newName'] == '') {
       return
     }
+    var data = {
+      "name": this.newTask['newName']
+    }
+    this.taskService.addChore(data).subscribe(
+
+      data => {
+            this.items = [];
+            for(var i=0;i<data.length;i++) {
+              this.items.push(data[i].name);
+            }
+          },
+          // If trying to grab the data results in an error
+          err => {
+              console.log(err);
+          },
+          // Finally, In all cases console log "Task Grab Complete"
+          () => console.log('Add Chore complete')
+
+    );
     this.items.unshift(this.newTask['newName'])
     this.newTask['newName'] = '';
   }
