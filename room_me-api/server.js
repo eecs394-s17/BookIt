@@ -13,6 +13,7 @@ mongoose.connect('mongodb://orange394:bookit!12@ds157390.mlab.com:57390/roomme')
 //Use bodyparser
 app.use(bodyParser());
 
+
 app.use(function (req, res, next) {
 
     // Website you wish to allow to connect
@@ -67,6 +68,15 @@ app.get('/chores', function(req, res) {
 	  res.status(200).send(chores);
 	});
 
+});
+
+// Delete chore by chore ID
+app.delete('/chores/:taskId', function(req, res) {
+	Chore.findByIdAndRemove(req.params.taskId, function(err) {
+		if (err) throw err;
+		console.log('Successfully deleted');
+		res.send('Success');
+	})
 });
 
 app.listen(8000);

@@ -21,7 +21,7 @@ export class ChoresPage {
 
   constructor(public navCtrl: NavController, private taskService: TaskService) {
       // Subscribe is called once the grabTasks() function receives its data
-    
+
   };
 
   ionViewDidEnter() {
