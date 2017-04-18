@@ -22,7 +22,7 @@
       <ion-input type="text" placeholder="Add Task" [(ngModel)]="newTask.newName" name="newName"></ion-input>
     </ion-item>
 
-    <button ion-button full icon-left ngClick="addTask()" navPop>
+    <button ion-button full icon-left (click)="addTask()">
       <ion-icon name="add-circle"></ion-icon>
       Add Task
     </button>

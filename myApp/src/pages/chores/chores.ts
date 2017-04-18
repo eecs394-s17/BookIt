@@ -21,9 +21,14 @@ export class ChoresPage {
 
   constructor(public navCtrl: NavController, private taskService: TaskService) {
       // Subscribe is called once the grabTasks() function receives its data
-      this.taskService.grabTasks().subscribe(
+    
+  };
+
+  ionViewDidEnter() {
+    this.taskService.grabTasks().subscribe(
           // If data is received successfully
           data => {
+              this.items = [];
               console.log("data",data);
 
               for(var i=0;i<data.length;i++) {
@@ -37,7 +42,7 @@ export class ChoresPage {
           // Finally, In all cases console log "Task Grab Complete"
           () => console.log('Task Grab complete')
       );
-  };
+  }
 
   addTask() {
     if (this.newTask['newName'] == '') {
