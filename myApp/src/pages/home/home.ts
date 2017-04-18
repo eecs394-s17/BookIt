@@ -1,3 +1,4 @@
+declare var loggedIn: number;
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
@@ -9,7 +10,7 @@ import { LoginPage } from '../login/login';
 export class HomePage {
 
   loggedIn = 0
-  
+
   constructor(public navCtrl: NavController) {
 
   }
@@ -17,8 +18,8 @@ export class HomePage {
   ngAfterViewInit() {
     if(this.loggedIn == 0) {
         this.navCtrl.push(LoginPage);
+        this.loggedIn = 1;
     }
-    this.loggedIn = 1
   }
 
 }
