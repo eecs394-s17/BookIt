@@ -75,7 +75,12 @@ app.delete('/chores/:taskId', function(req, res) {
 	Chore.findByIdAndRemove(req.params.taskId, function(err) {
 		if (err) throw err;
 		console.log('Successfully deleted');
-		res.send('Success');
+		Chore.find({}, function(err, chores) {
+		  if (err) throw err;
+
+		  console.log(chores);
+		  res.status(200).send(chores);
+		});;
 	})
 });
 

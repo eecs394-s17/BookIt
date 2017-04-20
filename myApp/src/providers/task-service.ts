@@ -31,7 +31,7 @@ export class TaskService {
 
   //data is the id of the chore
   deleteChore(data) {
-    var url = 'http://104.236.94.74:8000/chores' + data['_id'];
+    var url = 'http://104.236.94.74:8000/chores/' + data['_id'];
     var response = this.http.delete(url, data).map(res => res.json());
     return response;
   }
