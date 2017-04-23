@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 
 import {TaskService} from '../../providers/task-service';
+import {UserService} from '../../providers/user-service';
 
 import { AssignPage } from '../assign/assign';
 
@@ -19,8 +20,9 @@ export class ChoresPage {
   items = [];
   newTask = {};
 
-  constructor(public navCtrl: NavController, private taskService: TaskService) {
+  constructor(public navCtrl: NavController, private taskService: TaskService,public user:UserService) {
       // Subscribe is called once the grabTasks() function receives its data
+      console.log(user.name);
 
   };
 

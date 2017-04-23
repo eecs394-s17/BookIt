@@ -23,8 +23,20 @@ export class AssignPage {
       return
     }
 
+    var newName = this.newTask['newName'];
+    var assignTo = this.newTask["assignTo"];
+    if(assignTo != null) {
+      newName = newName + ", assigned to "+assignTo[0];
+      if(assignTo.length > 1) {
+        for(var i = 1;i<assignTo.length;i++) {
+          newName = newName + ", "+assignTo[i];
+        }
+      }
+    }
+
+
     var data = {
-      "name": this.newTask['newName']
+      "name": newName
     }
     this.taskService.addChore(data).subscribe(
 

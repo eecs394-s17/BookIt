@@ -8,6 +8,7 @@ import { HomePage } from '../pages/home/home';
 import { ChoresPage } from '../pages/chores/chores';
 import { ShoppingPage } from '../pages/shopping/shopping';
 import { AssignPage } from '../pages/assign/assign';
+import { UserService } from '../providers/user-service';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -37,7 +38,9 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    UserService,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+
   ]
 })
 export class AppModule {}
