@@ -12,7 +12,6 @@ import 'rxjs/add/operator/map';
 export class TaskService {
 
   constructor(public http: Http) {
-    console.log('Hello TaskService Provider');
   }
 
   // Function to grab data from the api

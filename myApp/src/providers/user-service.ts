@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 
 @Injectable()
 export class UserService {
+<<<<<<< HEAD
   public data:Object = {};
 
   constructor(public http: Http) {
@@ -17,3 +18,9 @@ export class UserService {
 
     }
 }
+=======
+  public name:String = "";
+  public points: 0;
+  public completed: {};
+}
+>>>>>>> 69f1c4f622d59ae731a1a79f37cec32939f02e65

@@ -36,7 +36,8 @@ export class AssignPage {
 
 
     var data = {
-      "name": newName
+      "name": newName,
+      "completed": false,
     }
     this.taskService.addChore(data).subscribe(
 

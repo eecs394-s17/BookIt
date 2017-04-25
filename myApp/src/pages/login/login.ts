@@ -10,7 +10,6 @@ import {UserService} from '../../providers/user-service';
 export class LoginPage {
 	login = {};
 	constructor(public navCtrl: NavController,public user:UserService) {
-		//user.name = "john";
 
 	}
 
@@ -26,7 +25,8 @@ export class LoginPage {
           data => {
           		this.user.data = data[0];
                 console.log("data", this.user.data);
-                this.navCtrl.pop();
+                this.navCtrl.setRoot(HomePage);
+                //this.navCtrl.pop();
               },
               // If trying to grab the data results in an error
               err => {
@@ -38,5 +38,4 @@ export class LoginPage {
         );
 
 	}
-
 }
