@@ -12,7 +12,7 @@ export class UserService {
   }
 
   login(name) {
-        var url = 'http://localhost:8000/users/'+name;
+        var url = 'http://104.236.94.74:8000/users/'+name;
         var response = this.http.get(url).map(res => res.json());
         return response;
 
