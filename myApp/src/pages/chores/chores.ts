@@ -22,7 +22,7 @@ export class ChoresPage {
 
   constructor(public navCtrl: NavController, private taskService: TaskService,public user:UserService) {
       // Subscribe is called once the grabTasks() function receives its data
-      console.log(user.name);
+      console.log("d2",this.user.data);
 
   };
 

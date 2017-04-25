@@ -3,6 +3,7 @@ var express    = require('express'),
 	mongoose   = require('mongoose');
 
 var Chore = require('./models/chore');
+var User = require('./models/user');
 
 var app = express();
 
@@ -69,6 +70,29 @@ app.get('/chores', function(req, res) {
 	});
 
 });
+
+app.get('/users/:name', function(req, res) {
+
+	User.find({name:req.params.name}, function(err, user) {
+	  if (err) throw err;
+
+	  console.log(user);
+	  res.status(200).send(user);
+	});
+
+});
+
+app.get('/users', function(req, res) {
+
+	User.find({}, function(err, user) {
+	  if (err) throw err;
+
+	  console.log(user);
+	  res.status(200).send(user);
+	});
+
+});
+
 
 // Delete chore by chore ID
 app.delete('/chores/:taskId', function(req, res) {
