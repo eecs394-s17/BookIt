@@ -38,11 +38,13 @@ app.post('/chores', function(req, res) {
 	console.log(req.body);
 
 	var chore_name = req.body.name;
+	var chore_complete = req.body.completed;
 
 	if (!chore_name.length) res.send(400);
 
 	var nchore = new Chore({
-	  name: chore_name
+	  name: chore_name,
+		completed: chore_complete
 	});
 
 	nchore.save(function(err) {

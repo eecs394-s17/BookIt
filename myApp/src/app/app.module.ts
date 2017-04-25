@@ -6,7 +6,6 @@ import { MyApp } from './app.component';
 import { LoginPage } from '../pages/login/login';
 import { HomePage } from '../pages/home/home';
 import { ChoresPage } from '../pages/chores/chores';
-import { ShoppingPage } from '../pages/shopping/shopping';
 import { AssignPage } from '../pages/assign/assign';
 import { UserService } from '../providers/user-service';
 
@@ -19,7 +18,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     HomePage,
     ChoresPage,
-    ShoppingPage,
     AssignPage
   ],
   imports: [
@@ -32,7 +30,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     LoginPage,
     HomePage,
     ChoresPage,
-    ShoppingPage,
     AssignPage
   ],
   providers: [

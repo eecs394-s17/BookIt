@@ -19,7 +19,7 @@
       <ion-input type="password" ng-model="user.password"></ion-input>
     </ion-item>
 
-    <button ion-button full id="login" navPop>Sign In</button>
+    <button ion-button full id="login" (click) = "signIn()">Sign In</button>
 
   </ion-list>
 </ion-content>

@@ -11,7 +11,9 @@ export class LoginPage {
 	login = {};
 	constructor(public navCtrl: NavController,public user:UserService) {
 		user.name = "john";
-
 	}
 
+  signIn() {
+    this.navCtrl.setRoot(HomePage);
+  }
 }
