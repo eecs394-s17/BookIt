@@ -40,13 +40,17 @@ app.post('/chores', function(req, res) {
 
 	var chore_name = req.body.name;
 	var chore_complete = req.body.completed;
+  var chore_assignedTo = req.body.assignedTo;
 
 	if (!chore_name.length) res.send(400);
 
 	var nchore = new Chore({
 	  name: chore_name,
-		completed: chore_complete
+		completed: chore_complete,
+    assignedTo: chore_assignedTo
 	});
+
+  console.log(nchore);
 
 	nchore.save(function(err) {
 	  if (err) throw err;
@@ -111,3 +115,4 @@ app.delete('/chores/:taskId', function(req, res) {
 });
 
 app.listen(8000);
+console.log("Server alive on port 8000");
