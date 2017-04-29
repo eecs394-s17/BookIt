@@ -15,7 +15,6 @@ export class TaskService {
   }
 
   // Function to grab data from the api
-  // TODO: Replace url with valid API url
   grabTasks() {
         var url = 'http://104.236.94.74:8000/chores';
         var response = this.http.get(url).map(res => res.json());
@@ -23,7 +22,9 @@ export class TaskService {
     }
 
   addChore(data) {
+    console.log(data);
     var url = 'http://104.236.94.74:8000/chores';
+    // var url = 'http://localhost:8000/chores';
     var response = this.http.post(url, data).map(res => res.json());
     return response;
   }

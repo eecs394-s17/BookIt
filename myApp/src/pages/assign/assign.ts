@@ -25,20 +25,14 @@ export class AssignPage {
 
     var newName = this.newTask['newName'];
     var assignTo = this.newTask["assignTo"];
-    if(assignTo != null) {
-      newName = newName + ", assigned to "+assignTo[0];
-      if(assignTo.length > 1) {
-        for(var i = 1;i<assignTo.length;i++) {
-          newName = newName + ", "+assignTo[i];
-        }
-      }
-    }
-
 
     var data = {
       "name": newName,
+      "assignedTo": assignTo,
       "completed": false,
     }
+    console.log(data);
+
     this.taskService.addChore(data).subscribe(
 
       data => {
@@ -50,11 +44,7 @@ export class AssignPage {
           },
           // Finally, In all cases console log "Task Grab Complete"
           () => console.log('Add Chore complete')
-
     );
-
-    console.log(this.newTask['newName'])
-    this.newTask['newName'] = '';
   }
 
 }
