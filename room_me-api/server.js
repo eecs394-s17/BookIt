@@ -98,7 +98,11 @@ app.put('/chores/:taskId', function(req, res) {
 		if (err) throw err;
     console.log(req.body);
     console.log("Changing Task from: " + completed + " to " + !completed);
-		res.status(200).send('Success!');
+    console.log("Chore successfully updated");
+    var data = {
+      success: true
+    }
+		res.status(200).send(data);
 	})
 });
 

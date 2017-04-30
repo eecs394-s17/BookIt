@@ -60,4 +60,20 @@ export class ChoresPage {
 
       );
   }
+  updateTask(item){
+    var itemId = item._id;
+    var task_completed = item.completed
+    console.log("Setting item: " + itemId + " to " + !task_completed);
+
+    this.taskService.updateChore(item).subscribe(
+      data => {
+        console.log("Task successfully updated");
+      },
+      err => {
+        console.log("Server returned an error");
+        console.log(err);
+      },
+      () => console.log('Update Chore Complete')
+    );
+  }
 }

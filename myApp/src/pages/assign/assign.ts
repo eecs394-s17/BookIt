@@ -3,8 +3,6 @@ import { NavController } from 'ionic-angular';
 
 import {TaskService} from '../../providers/task-service';
 
-import { ChoresPage } from '../chores/chores';
-
 @Component({
   selector: 'page-assign',
   templateUrl: 'assign.html',
@@ -45,6 +43,10 @@ export class AssignPage {
           // Finally, In all cases console log "Task Grab Complete"
           () => console.log('Add Chore complete')
     );
+  }
+
+  completeTask(task){
+    console.log(task);
   }
 
 }

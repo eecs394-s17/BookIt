@@ -36,5 +36,13 @@ export class TaskService {
     return response;
   }
 
+  // Takes in taskId and the current value of completed and performs a logical NOT in the database
+  updateChore(data){
+    // var url = 'http://104.236.94.74:8000/chores/' + data['_id'];
+    var url = 'http://localhost:8000/chores/' + data['_id'];
+    var response = this.http.put(url, data).map(res => res.json());
+    return response;
+  }
+
 
 }
