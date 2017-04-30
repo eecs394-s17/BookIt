@@ -32,6 +32,7 @@ export class ChoresPage {
           data => {
               this.items = [];
               this.items = data;
+              console.log(data);
           },
           // If trying to grab the data results in an error
           err => {
@@ -63,11 +64,13 @@ export class ChoresPage {
   updateTask(item){
     var itemId = item._id;
     var task_completed = item.completed
+    item.completed = !item.completed
     console.log("Setting item: " + itemId + " to " + !task_completed);
 
     this.taskService.updateChore(item).subscribe(
       data => {
         console.log("Task successfully updated");
+        console.log("New Task Value: " + data.new_value);
       },
       err => {
         console.log("Server returned an error");

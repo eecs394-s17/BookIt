@@ -100,7 +100,8 @@ app.put('/chores/:taskId', function(req, res) {
     console.log("Changing Task from: " + completed + " to " + !completed);
     console.log("Chore successfully updated");
     var data = {
-      success: true
+      success: true,
+      new_value: !completed
     }
 		res.status(200).send(data);
 	})
