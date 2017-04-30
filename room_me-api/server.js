@@ -54,11 +54,8 @@ app.post('/chores', function(req, res) {
 
 	nchore.save(function(err) {
 	  if (err) throw err;
-	  console.log('Chore saved.');
 	  Chore.find({}, function(err, chores) {
 		  if (err) throw err;
-
-		  console.log(chores);
 		  res.status(200).send(chores);
 		});
 
@@ -70,8 +67,6 @@ app.get('/chores', function(req, res) {
 
 	Chore.find({}, function(err, chores) {
 	  if (err) throw err;
-
-	  console.log(chores);
 	  res.status(200).send(chores);
 	});
 
@@ -81,8 +76,6 @@ app.get('/users/:name', function(req, res) {
 
 	User.find({name:req.params.name}, function(err, user) {
 	  if (err) throw err;
-
-	  console.log(user);
 	  res.status(200).send(user);
 	});
 
@@ -92,8 +85,6 @@ app.get('/users', function(req, res) {
 
 	User.find({}, function(err, user) {
 	  if (err) throw err;
-
-	  console.log(user);
 	  res.status(200).send(user);
 	});
 
@@ -101,16 +92,13 @@ app.get('/users', function(req, res) {
 
 
 // Delete chore by chore ID
-app.delete('/chores/:taskId', function(req, res) {
-	Chore.findByIdAndRemove(req.params.taskId, function(err) {
+app.put('/chores/:taskId', function(req, res) {
+    var completed = (req.body.completed == 'true');
+	Chore.update({ _id: req.params.taskId},{$set: {completed: !completed}}, function(err) {
 		if (err) throw err;
-		console.log('Successfully deleted');
-		Chore.find({}, function(err, chores) {
-		  if (err) throw err;
-
-		  console.log(chores);
-		  res.status(200).send(chores);
-		});;
+    console.log(req.body);
+    console.log("Changing Task from: " + completed + " to " + !completed);
+		res.status(200).send('Success!');
 	})
 });
 
