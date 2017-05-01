@@ -93,15 +93,16 @@ app.get('/users', function(req, res) {
 
 // Delete chore by chore ID
 app.put('/chores/:taskId', function(req, res) {
+	console.log("body",req.body);
     var completed = req.body.completed;
-	Chore.update({ _id: req.params.taskId},{$set: {completed: !completed}}, function(err) {
+	Chore.update({ _id: req.body._id},{$set: {completed: completed}}, function(err) {
 		if (err) throw err;
     console.log(req.body);
-    console.log("Changing Task from: " + completed + " to " + !completed);
+    console.log("Changing Task from: " + !completed + " to " + completed);
     console.log("Chore successfully updated");
     var data = {
       success: true,
-      new_value: !completed
+      new_value: completed
     }
 		res.status(200).send(data);
 	})

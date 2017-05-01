@@ -64,7 +64,7 @@ export class ChoresPage {
   updateTask(item){
     var itemId = item._id;
     var task_completed = item.completed
-    item.completed = !item.completed
+    //item.completed = !item.completed
     console.log("Setting item: " + itemId + " to " + !task_completed);
 
     this.taskService.updateChore(item).subscribe(

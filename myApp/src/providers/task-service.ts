@@ -17,6 +17,7 @@ export class TaskService {
   // Function to grab data from the api
   grabTasks() {
         var url = 'http://104.236.94.74:8000/chores';
+        //var url = 'http://localhost:8000/chores';
         var response = this.http.get(url).map(res => res.json());
         return response;
     }
@@ -38,8 +39,8 @@ export class TaskService {
 
   // Takes in taskId and the current value of completed and performs a logical NOT in the database
   updateChore(data){
-    // var url = 'http://104.236.94.74:8000/chores/' + data['_id'];
-    var url = 'http://localhost:8000/chores/' + data['_id'];
+    var url = 'http://104.236.94.74:8000/chores/' + data['_id'];
+    //var url = 'http://localhost:8000/chores/' + data['_id'];
     var response = this.http.put(url, data).map(res => res.json());
     return response;
   }

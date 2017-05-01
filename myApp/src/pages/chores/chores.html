@@ -21,7 +21,7 @@
       <ion-icon name="add-circle"></ion-icon>
       Add Task
     </button>
-    <ion-item-sliding *ngFor="let item of items">
+    <ion-item-sliding *ngFor="let item of items" [hidden]="item.completed">
       <ion-item>
         <ion-label stacked class="main-label">{{item.name}}</ion-label>
         <ion-label stacked class="sublabel">
@@ -34,7 +34,7 @@
           </button>
         </ion-item-options>
 
-        <ion-checkbox (click)="updateTask(item)" color="secondary" ng-model="item.completed" ng-true-value="1" ng-false-value="0" ng-checked = "item.completed == 1" ></ion-checkbox>
+        <ion-checkbox (click)="updateTask(item)" color="secondary" [(ngModel)]="item.completed"  ></ion-checkbox>
       </ion-item>
       <ion-item-options side="right">
         <button (click)="removeTask(item._id)" ion-button color="danger">
