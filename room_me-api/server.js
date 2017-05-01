@@ -93,7 +93,7 @@ app.get('/users', function(req, res) {
 
 // Delete chore by chore ID
 app.put('/chores/:taskId', function(req, res) {
-    var completed = (req.body.completed == 'true');
+    var completed = req.body.completed;
 	Chore.update({ _id: req.params.taskId},{$set: {completed: !completed}}, function(err) {
 		if (err) throw err;
     console.log(req.body);
