@@ -8,5 +8,5 @@ var choreSchema = new Schema({
 });
 
 var Chore = mongoose.model('Chore', choreSchema);
-
+ack
 module.exports = Chore;
