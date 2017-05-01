@@ -3,7 +3,6 @@ import { Component, ViewChild } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { Chart } from 'chart.js';
-import {UserService} from '../../providers/user-service';
 
 @Component({
   selector: 'page-home',
