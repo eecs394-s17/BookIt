@@ -1,7 +1,19 @@
-page-home {
-
-}
-
 #login {
   margin: 50px auto;
+}
+
+.ios, .md {
+
+    page-home {
+
+        .scroll-content {
+            background-color: map-get($colors, light);
+        }
+
+        ion-card-header {
+            font-weight: bold;
+        }
+
+    }
+
 }

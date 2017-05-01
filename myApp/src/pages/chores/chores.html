@@ -36,11 +36,6 @@
 
         <ion-checkbox (click)="updateTask(item)" color="secondary" [(ngModel)]="item.completed"  ></ion-checkbox>
       </ion-item>
-      <ion-item-options side="right">
-        <button (click)="removeTask(item._id)" ion-button color="danger">
-          Remove
-        </button>
-      </ion-item-options>
     </ion-item-sliding>
   </ion-list>
 </ion-content>
